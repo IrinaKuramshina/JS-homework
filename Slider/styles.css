@@ -1,0 +1,35 @@
+.slider {
+    width: 564px;
+    height: 845px;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.slider-line {
+    height: 845px;
+    width: 1600px;
+    display: flex;
+    position: relative; 
+    left: 0;
+    transition: all ease 1s;
+}
+
+.slider-next {
+    margin-top: 50vh;
+    margin-left: 32.2vw;
+    position: absolute;
+    z-index: 1;
+}
+
+.slider-prev {
+    margin-top: 50vh;
+    position: absolute;
+    z-index: 1;
+}
+
+.slider-next, .slider-prev {
+    border: none;
+    background-color: rgba(216, 192, 215, 0.5);
+    width: 70px;
+    height: 50px;
+}
