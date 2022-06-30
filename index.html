@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .selected {
+            background-color: lightgray;
+            border: yellow 2px solid;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div onclick="select(this)">
+        Введите первое число
+        <input class="input" type="number" id="number1">
+    </div>
+    <p></p>
+    <div onclick="select(this)">
+        Введите второе число
+        <input class="input" type="number" id="number2">
+    </div>
+    <p></p>
+    <button onclick="sum()">Сложить</button>
+    <button onclick="minus()">Вычесть</button>
+    <button onclick="times()">Умножить</button>
+    <button onclick="divide()">Разделить</button>
+    <p></p>
+    <div onclick="select(this)">
+        <p>Результат: <span id="result"></span></p>
+    </div>
+    <p></p>
+    <button onclick="clean()">Очистить</button>
+
+    <script>
+        let result = document.getElementById('result')
+
+        function sum() {
+            let num1 = document.getElementById("number1").value;
+            let num2 = document.getElementById("number2").value;
+            result = +num1 + +num2;
+            document.getElementById('result').innerHTML = result;
+        }
+
+        function minus() {
+            let num1 = document.getElementById("number1").value;
+            let num2 = document.getElementById("number2").value;
+            result = num1 - num2;
+            document.getElementById('result').innerHTML = result;
+        }
+
+        function times() {
+            let num1 = document.getElementById("number1").value;
+            let num2 = document.getElementById("number2").value;
+            result = num1 * num2;
+            document.getElementById('result').innerHTML = result;
+        }
+
+        function divide() {
+            let num1 = document.getElementById("number1").value;
+            let num2 = document.getElementById("number2").value;
+            result = num1 / num2;
+            document.getElementById('result').innerHTML = result;
+        }
+
+        // code for bacnkground-color change
+
+        function select(sender) {
+            sender.classList.add("selected");
+        }
+
+        // code for clean up input fields
+
+        function clean() {
+            let inputresult = document.getElementById('result');
+            result.value = '';
+            let inputnumber1 = document.getElementById('number1');
+            number1.value = " ";
+            let inputnumber2 = document.getElementById('number2');
+            number2.value = " ";
+        }
+    </script>
+
+
+</body>
+
+</html>
